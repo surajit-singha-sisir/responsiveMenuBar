@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 10 Desktop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="desktop-icons">
+    <div class="desktop-icon">
+      <i class="fas fa-folder"></i>
+      Folder 1
+    </div>
+    <div class="desktop-icon">
+      <i class="fas fa-folder"></i>
+      Folder 2
+    </div>
+    <!-- Add more folders as needed -->
+  </div>
+
+  <div id="taskbar">
+    <div>
+      <span class="taskbar-icon">
+        <i class="fab fa-windows"></i>
+      </span>
+
+      <!-- Start Menu Popup -->
+  <div id="start-menu">
+    <ul>
+      <li>App 1</li>
+      <li>App 2</li>
+      <!-- Add more applications as needed -->
+    </ul>
+  </div>
+
+  
+      <span class="taskbar-icon">
+        <i class="fas fa-search"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fab fa-windows"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fab fa-edge"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fab fa-chrome"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fas fa-code"></i>
+      </span>
+    </div>
+    <div>
+      <span class="taskbar-icon" id="wifi-icon">
+        <i class="fas fa-wifi"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fas fa-volume-up"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fas fa-battery-full"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="taskbar-icon">
+        <i class="fas fa-caret-up"></i>
+      </span>
+    </div>
+  </div>
+
+  <!-- Wi-Fi Popup -->
+  <div id="wifi-popup">
+    <h3>Available Wi-Fi Networks</h3>
+    <ul id="wifi-networks">
+      <li>Network 1</li>
+      <li>Network 2</li>
+      <li>Network 3</li>
+    </ul>
+    <button id="close-wifi-popup">Close</button>
+  </div>
+
+  <!-- Add a hidden audio element for sound control -->
+  <audio id="audio-control" style="display: none">
+    <!-- Add the path to your sound file here -->
+    <source src="https://cdnsongs.com/dren/music/data/Single_Track/202307/Viah/128/Viah_1.mp3/Viah.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Volume Control Popup -->
+  <div id="volume-control">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.01">
+  </div>
+
+
+
+</body>
+</html>

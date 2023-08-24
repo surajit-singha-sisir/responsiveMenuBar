@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Mobile Responsive Head Menu bar with dropdown</title>
+    <meta name="description" content="Mobile Responsive Head Menu bar with dropdown">
+    <meta name="keywords" content="Header, Menubar, Responsive">
+    <meta name="author" content="Surajit Singha Sisir">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #2d313a;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 1.1875;
+            margin: 0;
+            padding: 0;
+        }
+
+        #FlexBoxContainer1 {
+            display: flex;
+            position: relative;
+            padding: 10px 10px 10px 10px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: flex-start;
+            margin: 0;
+            background-color: transparent;
+            background-image: none;
+            border: 0px solid #000000;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+
+        #ccr_ResponsiveMenu1 {
+            display: block;
+            font-family: Arial;
+            font-weight: normal;
+            text-align: left;
+            width: 100%;
+        }
+
+        #ccr_ResponsiveMenu1 li li {
+            border-bottom: 1px dotted;
+        }
+
+        #ResponsiveMenu1 {
+            background-color: #424242;
+            height: 69px;
+        }
+
+        #ccr_ResponsiveMenu1 ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        #ccr_ResponsiveMenu1 ul:after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        #ccr_ResponsiveMenu1 ul li {
+            border-radius: 0;
+            display: list-item;
+            float: left;
+            list-style: none;
+        }
+
+        #ccr_ResponsiveMenu1 ul li i {
+            font-size: 18px;
+            width: 18px;
+        }
+
+        #ccr_ResponsiveMenu1 ul li a {
+            background-color: #424242;
+            color: #FFFFFF;
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 13px;
+            font-style: normal;
+            text-decoration: none;
+            padding: 15px 30px 15px 30px;
+            text-align: center;
+        }
+
+        #ccr_ResponsiveMenu1>ul>li>a {
+            height: 39px;
+        }
+
+        .ResponsiveMenu1 a {
+            display: block;
+
+        }
+
+
+        #ccr_ResponsiveMenu1 li:hover>a,
+        #ccr_ResponsiveMenu1 li .active {
+            background: radial-gradient(circle, #424242, #2b2a2a);
+            color: #ffffff;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul {
+            display: none;
+            position: absolute;
+            top: 69px;
+        }
+
+        #ccr_ResponsiveMenu1 ul li:hover>ul {
+            display: list-item;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li {
+            float: none;
+            position: relative;
+            width: 200px;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li a {
+            background-color: #7A7A7A;
+            color: #FFFFFF;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li:hover>a,
+        #ccr_ResponsiveMenu1 ul ul li .active {
+            background: radial-gradient(circle, #424242, #2b2a2a);
+            color: #ffffff;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li i {
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li a {
+            padding-top: 15px;
+            padding-right: 20px;
+            padding-bottom: 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul ul li {
+            left: 200px;
+            position: relative;
+            top: -69px;
+        }
+
+        #ccr_ResponsiveMenu1 .arrow-down {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 2px;
+            vertical-align: middle;
+            border-top: 4px solid #FFFFFF;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+            border-bottom: 0 dotted;
+        }
+
+        #ccr_ResponsiveMenu1 .arrow-left {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 2px;
+            vertical-align: middle;
+            border-left: 4px solid #FFFFFF;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-right: 0 dotted;
+        }
+
+        #ccr_ResponsiveMenu1 li:hover>a .arrow-down,
+        #ccr_ResponsiveMenu1 li .active .arrow-down {
+            border-top-color: #424242;
+        }
+
+        #ccr_ResponsiveMenu1 ul ul li:hover>a .arrow-left,
+        #ccr_ResponsiveMenu1 ul ul li .active .arrow-left {
+            border-left-color: #424242;
+        }
+
+        #ccr_ResponsiveMenu1 .toggle,
+        [id^=ResponsiveMenu1-submenu] {
+            display: none;
+        }
+
+        @media all and (max-width:768px) {
+            #ccr_ResponsiveMenu1 {
+                margin: 0;
+                text-align: left;
+
+            }
+
+            #ccr_ResponsiveMenu1 ul li {
+                border-radius: 5px;
+                border-bottom: 1px dotted;
+            }
+
+            #ccr_ResponsiveMenu1 ul li a,
+            #ccr_ResponsiveMenu1 .toggle {
+                font-size: 13px;
+                font-weight: normal;
+                font-style: normal;
+                text-decoration: none;
+                padding: 15px 20px 15px 20px;
+            }
+
+            #ccr_ResponsiveMenu1 .toggle+a {
+                display: none !important;
+            }
+
+            .ResponsiveMenu1 {
+                display: none;
+                z-index: 9999;
+            }
+
+            #ResponsiveMenu1 {
+                background-color: transparent;
+            }
+
+            #ccr_ResponsiveMenu1>ul>li>a {
+                height: auto !important;
+                margin: 0;
+            }
+
+            #ccr_ResponsiveMenu1 .toggle {
+                display: block;
+                background-color: #424242;
+                color: #FFFFFF;
+                padding: 0px 20px 0px 20px;
+                line-height: 54px;
+                text-decoration: none;
+                border: none;
+            }
+
+            #ccr_ResponsiveMenu1 .toggle:hover {
+                background: radial-gradient(circle, #252525, #2b2a2a);
+                color: #ffffff;
+            }
+
+            [id^=ResponsiveMenu1-submenu]:checked+ul {
+                display: block !important;
+            }
+
+            #ResponsiveMenu1-title {
+                height: 69px !important;
+                line-height: 69px !important;
+                text-align: center;
+            }
+
+            #ccr_ResponsiveMenu1 ul li {
+                display: block;
+                width: 100% !important;
+                text-align: left;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul .toggle,
+            #ccr_ResponsiveMenu1 ul ul a {
+                padding: 0 40px;
+            }
+
+            #ccr_ResponsiveMenu1 a:hover,
+            #ccr_ResponsiveMenu1 ul ul ul a {
+                background-color: #7A7A7A;
+                color: #FFFFFF;
+            }
+
+            #ccr_ResponsiveMenu1 ul li ul li .toggle,
+            #ccr_ResponsiveMenu1 ul ul a {
+                background-color: #7A7A7A;
+                color: #FFFFFF;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul ul a {
+                padding: 15px 20px 15px 60px;
+            }
+
+            #ccr_ResponsiveMenu1 ul li a {
+                text-align: left;
+            }
+
+            #ccr_ResponsiveMenu1 ul li a br {
+                display: none;
+            }
+
+            #ccr_ResponsiveMenu1 ul li i {
+                margin-right: 8px;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul {
+                float: none;
+                position: static;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul li:hover>ul,
+            #ccr_ResponsiveMenu1 ul li:hover>ul {
+                display: none;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul li {
+                display: block;
+                width: 100%;
+            }
+
+            #ccr_ResponsiveMenu1 ul ul ul li {
+                position: static;
+            }
+
+            #ResponsiveMenu1-icon {
+                display: block;
+                position: absolute;
+                left: 30px;
+                top: 22px;
+            }
+
+            #ResponsiveMenu1-icon span {
+                display: block;
+                margin-top: 4px;
+                height: 2px;
+                background-color: #FFFFFF;
+                color: #FFFFFF;
+                width: 24px;
+            }
+
+            #ccr_ResponsiveMenu1 ul li ul li .toggle:hover {
+                background-color: #CCCCCC;
+                color: #ffffff;
+            }
+
+            #ccr_ResponsiveMenu1 .toggle .arrow-down {
+                border-top-color: #FFFFFF;
+            }
+
+            #ccr_ResponsiveMenu1 .toggle:hover .arrow-down,
+            #ccr_ResponsiveMenu1 li .active .arrow-down {
+                border-top-color: #424242;
+            }
+
+            #ccr_ResponsiveMenu1 ul li ul li .toggle .arrow-down {
+                border-top-color: #FFFFFF;
+            }
+
+            #ccr_ResponsiveMenu1 ul li ul li .toggle:hover .arrow-down,
+            #ccr_ResponsiveMenu1 ul li ul li .active .arrow-down {
+                border-top-color: #424242;
+            }
+        }
+
+        .copyright {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ccr_ResponsiveMenu1" style="position:absolute;">
+        <label class="toggle" for="ResponsiveMenu1-submenu" id="ResponsiveMenu1-title">LOGO<span
+                id="ResponsiveMenu1-icon"><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></span></label>
+        <input type="checkbox" id="ResponsiveMenu1-submenu">
+        <ul class="ResponsiveMenu1" id="ResponsiveMenu1" role="menu">
+            <li role="menuitem"><a href="" class="nav-link"><i class="fa fa-home fa-2x">&nbsp;</i><br>Home</a></li>
+            <li role="menuitem">
+                <label for="ResponsiveMenu1-submenu-0" class="toggle"><i class="fa fa-book fa-2x">&nbsp;</i>Blog<b
+                        class="arrow-down"></b></label>
+                <a href="javascript:void(0)" class="nav-link"><i class="fa fa-book fa-2x">&nbsp;</i><br>Blog<b
+                        class="arrow-down"></b></a>
+                <input type="checkbox" id="ResponsiveMenu1-submenu-0">
+                <ul role="menu">
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-1" class="toggle"><i
+                                class="fa fa-eye fa-2x">&nbsp;</i>Design<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i class="fa fa-eye fa-2x">&nbsp;</i>Design<b
+                                class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-1">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-2" class="toggle"><i
+                                class="fa fa-html5 fa-2x">&nbsp;</i>HTML<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i class="fa fa-html5 fa-2x">&nbsp;</i>HTML<b
+                                class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-2">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-3" class="toggle"><i
+                                class="fa fa-css3 fa-2x">&nbsp;</i>CSS<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i class="fa fa-css3 fa-2x">&nbsp;</i>CSS<b
+                                class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-3">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-4" class="toggle"><i
+                                class="fa fa-code fa-2x">&nbsp;</i>JavaScript<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i class="fa fa-code fa-2x">&nbsp;</i>JavaScript<b
+                                class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-4">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li role="menuitem">
+                <label for="ResponsiveMenu1-submenu-5" class="toggle"><i class="fa fa-gear fa-2x">&nbsp;</i>Work<b
+                        class="arrow-down"></b></label>
+                <a href="javascript:void(0)" class="nav-link"><i class="fa fa-gear fa-2x">&nbsp;</i><br>Work<b
+                        class="arrow-down"></b></a>
+                <input type="checkbox" id="ResponsiveMenu1-submenu-5">
+                <ul role="menu">
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-6" class="toggle"><i
+                                class="fa fa-desktop fa-2x">&nbsp;</i>Web&nbsp;Design<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i
+                                class="fa fa-desktop fa-2x">&nbsp;</i>Web&nbsp;Design<b class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-6">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-7" class="toggle"><i
+                                class="fa fa-picture-o fa-2x">&nbsp;</i>Typography<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i
+                                class="fa fa-picture-o fa-2x">&nbsp;</i>Typography<b class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-7">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                    <li role="menuitem">
+                        <label for="ResponsiveMenu1-submenu-8" class="toggle"><i
+                                class="fa fa-envelope fa-2x">&nbsp;</i>Applications<b class="arrow-down"></b></label>
+                        <a href="javascript:void(0)" class="nav-link"><i
+                                class="fa fa-envelope fa-2x">&nbsp;</i>Applications<b class="arrow-left"></b></a>
+                        <input type="checkbox" id="ResponsiveMenu1-submenu-8">
+                        <ul role="menu">
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;1</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;2</a></li>
+                            <li role="menuitem"><a href="" class="nav-link">Sub&nbsp;Menu&nbsp;3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li role="menuitem"><a href="" class="nav-link"><i class="fa fa-user fa-2x">&nbsp;</i><br>About</a></li>
+        </ul>
+    </div>
+</body>
+<div class="copyright">
+    &copy; Surajit Singha Sisir
+</div>
+
+</html>
